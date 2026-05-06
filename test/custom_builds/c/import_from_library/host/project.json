@@ -1,0 +1,22 @@
+{
+    "id": "host",
+    "type": "application",
+    "value": {
+        "public": false,
+        "use": [
+            "flecs"
+        ],
+        "standalone": true
+    },
+    "lang.c": {
+        "defines": ["FLECS_CUSTOM_BUILD", "FLECS_MODULE", "FLECS_LOG", "FLECS_OS_API_IMPL"],
+        "export-symbols": true,
+        "${os linux}": {
+            "lib": ["dl"],
+            "ldflags": ["-rdynamic"]
+        },
+        "${os darwin}": {
+            "ldflags": ["-Wl,-export_dynamic"]
+        }
+    }
+}

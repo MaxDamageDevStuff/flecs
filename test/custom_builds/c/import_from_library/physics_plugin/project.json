@@ -1,0 +1,8 @@
+{
+    "id": "physics_plugin",
+    "type": "package",
+    "value": {
+        "use": ["flecs"],
+        "public": false
+    }
+}
